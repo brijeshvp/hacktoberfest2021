@@ -1,0 +1,11 @@
+// c++ code to detect loop in a linked list using floyd's cycle detection algorithm
+// TC- O(N) and SC: O(1)
+bool hasCycle(ListNode *head) {
+      ListNode *slow = head, *fast = head;
+      while(fast!=NULL && fast->next!=NULL){
+          slow = slow->next;
+          fast = fast->next->next;
+          if(slow==fast)return true;
+      }
+      return false;
+  }
